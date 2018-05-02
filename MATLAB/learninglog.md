@@ -2,6 +2,8 @@
 
 
 
+## 2018-5-2 23:10:39
+
 用在参数列表中获取xx的函数（虽然长得不像函数）
 
 ```matlab
@@ -17,16 +19,14 @@ gcbf
 gcbo
 ```
 
-2018-5-2 23:10:39
-
-`imellipse`
+### `imellipse`
 
 [官网](https://ww2.mathworks.cn/help/images/ref/imellipse.html#bq_5ul3)
 
 An `imellipse` object encapsulates an interactive ellipse
             over an image.
 
-### Syntax
+#### Syntax
 
 `h = imellipse`
 
@@ -36,7 +36,7 @@ An `imellipse` object encapsulates an interactive ellipse
 
 `h = imellipse(___,Name,Value)`
 
-## Object Functions
+#### Object Functions
 
 Each `imellipse` object supports a number of methods. Type                `methods imellipse` to see a complete list.
 
@@ -64,7 +64,7 @@ Each `imellipse` object supports a number of methods. Type                `metho
 
 ``pos = wait(h)`` blocks execution of the MATLAB® command line until you finish positioning the ROI object `h`. Indicate completion by double-clicking on the ROI object. The function returns the position, `pos`, of the ROI object.
 
-e.g.
+#### e.g.
 
 ```matlab
 imshow('pout.tif')
@@ -88,14 +88,44 @@ position = wait(h)
 
   llipse ROI object, specified as an [`imellipse`](https://ww2.mathworks.cn/help/images/ref/imellipse.html) object.
 
-See Also
+#### See Also
 
 [`getPosition`](https://ww2.mathworks.cn/help/images/ref/imroi.getposition.html) | [`getVertices`](https://ww2.mathworks.cn/help/images/ref/imroi.getvertices.html) | [`imroi`](https://ww2.mathworks.cn/help/images/ref/imroi-class.html) | [`resume`](https://ww2.mathworks.cn/help/images/ref/imroi.resume.html)
 
 
 
-2018-5-2 23:54:52
+## 2018-5-2 23:54:52
 
 MATLAB的效率不可小觑，设计时候需要多利用其向量特点进行计算，因为向量的内存空间是在一块的，可以用C的库进行快速运算。
 
 
+
+## 2018-5-3 01:59:35
+
+识别圆圈的核心算法
+
+### `imfindcircles`
+
+[官网](https://ww2.mathworks.cn/help/images/ref/imfindcircles.html)
+
+Find circles using circular Hough transform
+
+这个算法非常鲁棒，可以克服噪点、封闭咬合occlusion和亮度变化varying illumination。
+
+#### Syntax
+
+`centers = imfindcircles(A,radius)`
+
+`[centers,radii]= imfindcircles(A,radiusRange)`
+
+`[centers,radii,metric]= imfindcircles(A,radiusRange)`
+
+`[centers,radii,metric]= imfindcircles(___,Name,Value)`
+
+
+
+#### graythresh
+
+[官网](https://ww2.mathworks.cn/help/images/ref/graythresh.html)
+
+Global image threshold using Otsu's method
