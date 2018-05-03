@@ -15,6 +15,8 @@
 % fcn = makeConstrainToRectFcn('imellipse',get(gca,'XLim'),get(gca,'YLim'));
 % setPositionConstraintFcn(h,fcn);
 
-imshow('pout.tif')
-h = imrect;
-position = wait(h)
+% imshow('pout.tif')
+% h = imrect;
+% position = wait(h)
+
+openExample('images/DetectCirclesExample')
