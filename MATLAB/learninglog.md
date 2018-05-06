@@ -221,6 +221,10 @@ imwrite(A,'image_out_1.jpg');
 
 2018-5-3 20:26:41
 
+#### `edge`: Perform faster Canny edge detection
+
+The [`edge`](https://www.mathworks.com/help/releases/R2016b/images/ref/edge.html) function supports a new parameter, `approxcanny`, that lets you perform Canny edge detection with better performance than the `canny` option, although the canny option might provide more precise filtering.
+
 Sobel 和 Canny 边缘检测
 
 ```matlab
