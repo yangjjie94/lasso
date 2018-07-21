@@ -1,3 +1,7 @@
+## ---self----
+data
+
+## ---global---
 # Dropbox settings and caches
 .dropbox
 .dropbox.attr
